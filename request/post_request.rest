@@ -1,0 +1,53 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "patterns",
+  "author": "ali",
+  "url": "https://reactpatterns.com/",
+  "likes": 5,
+  "userId": "68d124cac326625bf9a997df"
+}
+### Create a new user
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "name": "Matti Luukkainen",
+  "password": "mluukkai"
+}
+
+###
+
+### Login with correct credentials
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "password": "mluukkai"
+}
+
+###
+
+### Login with wrong password
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "password": "wrongpassword"
+}
+### Create a new blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI2OGQ0ZjEwNDE4NDU0OTdhMWY1YzdiZDgiLCJpYXQiOjE3NTkxNDA3Njh9.ob3gTB43onC0bNHQxYLj41t45hkNiw5823JLDSSyhwM
+
+{
+  "title": "patterns",
+  "author": "ali",
+  "url": "https://reactpatterns.com/",
+  "likes": 5
+}
+

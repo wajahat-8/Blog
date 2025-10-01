@@ -1,5 +1,7 @@
 const { transform } = require('lodash')
 const mongoose = require('mongoose')
+
+mongoose.set('strictQuery', false)
 const blogSchema = mongoose.Schema({
   title: {
     type:String,
@@ -9,6 +11,10 @@ const blogSchema = mongoose.Schema({
      type:String,
     required:true
   },
+    user:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'User'
+  },
   url:{
 type:String,
     required:true
@@ -17,6 +23,7 @@ type:String,
     type:Number,
     default:0
   },
+
 })
 blogSchema.set('toJSON',{
   transform:(document,returnedObject)=>{
